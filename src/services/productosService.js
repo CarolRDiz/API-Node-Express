@@ -1,4 +1,4 @@
-const productosModelo = require("../database/coursesModel")
+const productosModelo = require("../database/productosModelo")
 const {v4: uuid} = require("uuid")
 /*
 SERVICIOS

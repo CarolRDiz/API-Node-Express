@@ -1,13 +1,13 @@
-var datos = require("./courses.json")
+var datos = require("./productos.json")
 const fs = require("fs")
 
 const getAllProducts = () => {
     return datos.productos
 }
 
-const getOneProduct = (nombre) => {
-    const producto = datos["productos"][nombre]
-    return producto
+const getOneProduct = (title) => {
+    const course = datos["productos"][title]
+    return course
 }
 const deleteOneProduct = (nombre) => {
   const producto = datos["productos"][nombre]

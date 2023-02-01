@@ -1,4 +1,4 @@
-const productosService = require("../services/coursesService");
+const productosService = require("../services/productosService");
 /*
 CONTROLADOR
 En el controlador se implementa la lógica de la aplicación.

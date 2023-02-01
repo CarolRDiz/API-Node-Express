@@ -1,0 +1,55 @@
+{
+  "productos": {
+    "Piano para principiantes": {
+      "id": 1,
+      "title": "Piano para principiantes",
+      "author": "Pedro Ramírez",
+      "price": 3.45,
+      "duration":4,
+      "language":"es",
+      "subtitle": true,
+      "area": "Music",
+      "subarea": "Instruments",
+      "level": "Beginners",
+      "date":"2023-01-22T22:13:45.531Z"
+    },
+    "Guitarra nivel intermedio": {
+      "id": 2,
+      "title": "Guitarra nivel intermedio",
+      "author": "María Rodríguez",
+      "price": 5,
+      "duration":2,
+      "language":"es",
+      "subtitle": false,
+      "area": "Music",
+      "subarea": "Instruments",
+      "level": "Medium",
+      "date":"2023-01-23T22:13:45.531Z"
+    },
+    "Escalas musicales": {
+      "id": 3,
+      "title": "Escalas musicales",
+      "author": "María Rodríguez",
+      "price": 0,
+      "duration":1,
+      "language":"es",
+      "subtitle": true,
+      "area": "Music",
+      "subarea": "Music Fundamentals",
+      "level": "Beginners",
+      "date":"2023-01-25T22:13:45.531Z"
+    },
+    " Curso de Sound Design completo": {
+      "id": 4,
+      "title": "Curso de Sound Design completo",
+      "author": "María Rodríguez",
+      "price": 0,
+      "duration":1,
+      "language":"es",
+      "subtitle": true,
+      "area": "Sound Design",
+      "level": "Advanced",
+      "date":"2023-01-25T22:13:45.531Z"
+    }
+  }
+}
