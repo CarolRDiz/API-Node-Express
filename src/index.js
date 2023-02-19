@@ -12,20 +12,21 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 
 var corsOptions = {
-  origin: ['http://localhost:5173','http://localhost:3001/api/v1/users/login', 'https://gleaming-capybara-1425de.netlify.app'],
+  //origin: ['http://localhost:5173','http://localhost:3001/api/v1/users/login', 'https://gleaming-capybara-1425de.netlify.app'],
+  origin: '*',
   credentials: true,
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 app.use(cors(
-  corsOptions
+  //corsOptions
 ));
 
-// app.use(function(req, res, next) {
-//   res.header("Access-Control-Allow-Origin", "*");
-//   res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE");
-//   res.header("Access-Control-Allow-Headers", "Content-Type");
-//   next();
-// });
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE");
+  res.header("Access-Control-Allow-Headers", "Content-Type");
+  next();
+});
 
 app.use((req, res, next) => {
   let date = new Date().toLocaleTimeString();
