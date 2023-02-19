@@ -1,21 +1,11 @@
 const productosService = require("../services/productosService");
-/*
-CONTROLADOR
-En el controlador se implementa la lógica de la aplicación.
-Desde el controlador, se llaman a los diferentes servicios que realizarán la interacción
-con la Base de Datos.
-En el controlador simplemente "se reparte el juego".
-*/
+
 const getAllProducts = (req, res, next) => {
   const allProducts = productosService.getAllProducts();
   res.send(allProducts).end();
   res.locals.mensaje = "OK";
 };
 
-/*
-  Ejercicio para la clase, implementa la funcionalidad que debe tener "getOneProduct"
-  Realiza la división entre "controlador" "servicio" "modelo"
-*/
 const getOneProduct = (req, res, next) => {
   let nombreProducto = req.params.prod;
   const producto = productosService.getOneProduct(nombreProducto);
@@ -23,23 +13,28 @@ const getOneProduct = (req, res, next) => {
   res.locals.mensaje = "OK";
 };
 
-//En esta funcion se define el método post de un producto
-//SOLO se implementa la logica de la aplicacion, es decir, simplemente
-//valida que existen datos en el cuerpo de la petición y que
-//si se inserta, manda una página con el producto insertado
-//y si no, envía el código de estado correspondiente y una página de error
-const postOneProduct = (req, res, next) => {
-  const { body } = req;
 
-  if (!body.nombre || !body.precio) {
+const postOneProduct = (req, res, next) => {
+
+  //const { body } = req;
+  
+  console.log("Body: " + body)
+
+  if (!body.title || !body.price) {
     res.status(400).send({ mensaje: "Datos Incompletos" }).end();
     res.locals.mensaje = "NOT OK";
   } else {
     const newProduct = {
-      nombre: body.nombre,
-      precio: body.precio,
+      title: req.body.title,
+      price: req.body.price,
+    }
     };
 
+    const newProduct = {
+      title: body.title,
+      price: body.price
+    };
+      
     const createdProduct = productosService.createOneProduct(newProduct);
 
     if (createdProduct) {
@@ -49,8 +44,7 @@ const postOneProduct = (req, res, next) => {
       res.status(409).send({ mensaje: "Entrada duplicada" }).end();
       res.locals.mensaje = "NOT OK";
     }
-  }
-};
+  };
 
 const putOneProduct = (req, res, next) => {
   let nombreProducto = req.params.prod;

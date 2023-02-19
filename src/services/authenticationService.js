@@ -1,33 +1,62 @@
-const usuariosModelo = require("../database/usersModelo");
+const authenticationModelo = require("../database/authenticationModelo")
+const {v4: uuid} = require("uuid")
 
-const checkUserEmail = (email, password) => {
-  const usuario = usuariosModelo.checkUserEmail(email, password);
-  if (!usuario.id) return false;
-  return usuario.id;
+
+const checkUser = (credenciales) => {
+
+    //Comprobar si el user existe
+    const usuario = authenticationModelo.checkUser(credenciales.email, credenciales.password)
+    if(!usuario) return false
+    return usuario.id
 };
 
-const addSession = (id_usuario, id_sesion) => {
-  //1º Comprobamos que la sesión no existe. Si no existe, la insertamos
-  if (!usuariosModelo.checkSession(id_sesion)) {
-    usuariosModelo.addSession(id_usuario, id_sesion);
-  }
+const generateSessionId = (id_usuario) => {
+
+    //CMPROBAMOS SI EL USUARIO TIENE UNA SESSION ACTIVA
+    const sessionId = authenticationModelo.checkSession(id_usuario)
+    
+    if(!sessionId){
+        const sessionId = uuid()
+        authenticationModelo.addSession(id_usuario, sessionId)
+        return sessionId
+    }
+
+    return sessionId
+
 };
 
-const checkSession = (id_sesion) => {
-  const session = usuariosModelo.checkSession(id_sesion);
-  if (!session) return false;
-  return session.sessionId;
+const checkCookieSession = (id_session) => {
+    const usuario = authenticationModelo.getUserBySessionId(id_session);
+    return usuario
 };
 
-const checkIfSessionExist = (id_usuario) => {
-  const session = usuariosModelo.checkIfSessionExist(id_usuario);
-  if (!session) return false;
-  return session.sessionId;
+const getUser = (id_session) => {
+    const usuario = authenticationModelo.getUserBySessionId(id_session);
+    return {name: usuario.name, email: usuario.email, courses: usuario.courses}
 }
 
+//SIGNUP
+const checkEmail = (email) => {
+    return authenticationModelo.checkEmail(email)
+}
+const createUser = (datos) => {
+    const {name, email, password} = datos
+    const newUser = { id: uuid(),name, email, password, "courses":[]};
+    authenticationModelo.createUser(newUser)
+}
+
+const deleteSession = (sessionId) => {
+    return authenticationModelo.deleteSession(sessionId)
+  }
+
+
+
 module.exports = {
-  checkUserEmail,
-  addSession,
-  checkSession,
-  checkIfSessionExist
-};
+    checkUser,
+    generateSessionId,
+    checkCookieSession,
+    checkEmail,
+    createUser,
+    getUser,
+    deleteSession
+}

@@ -1,55 +1,49 @@
 {
   "productos": {
-    "Piano para principiantes": {
-      "id": 1,
-      "title": "Piano para principiantes",
-      "author": "Pedro Ramírez",
-      "price": 3.45,
-      "duration":4,
-      "language":"es",
-      "subtitle": true,
-      "area": "Music",
-      "subarea": "Instruments",
-      "level": "Beginners",
-      "date":"2023-01-22T22:13:45.531Z"
-    },
     "Guitarra nivel intermedio": {
       "id": 2,
       "title": "Guitarra nivel intermedio",
       "author": "María Rodríguez",
       "price": 5,
-      "duration":2,
-      "language":"es",
+      "duration": 2,
+      "language": "es",
       "subtitle": false,
       "area": "Music",
       "subarea": "Instruments",
       "level": "Medium",
-      "date":"2023-01-23T22:13:45.531Z"
-    },
+      "date": "2023-01-23T22:13:45.531Z",
+      "image": "curso1.jpg",
+      "objetive": "Aprende a tocar la guitarra de la mano de un guitarrista y profesor de guitarra especializado con muchos años de experiencia.",
+      "introduction": "Probablemente el mejor curso de guitarra para principiantes. Hemos diseñado un programa para que aprender a tocar la guitarra sea divertido. La única forma de aprender es tocando lo que más te gusta y no practicando ejercicios aislados como encontrarás el la mayoría de cursos de guitarra. Este curso está diseñado para aprender tocando la guitarra, y todo lo que veamos lo trasladaremos a la guitarra... TOCAR, TOCAR y TOCAR.\nSi realmente quieres aprender a tocar la guitarra este curso esta hecho para ti. Al final de curso te sorprenderás de lo que eres capaz de hacer con una guitarra entre las manos.\nAprenderás más en unas pocas semanas que la mayoría de la gente que lleva años tocando la guitarra. ",
+      "contents": [["Introducción",["Presentación","Influencias"]],["Acordes",["Presentación","Influencias"]],["Escalas",["La escala pentatónica", "La escala mayor"]]],
+      "requirements":"Únicamente debes tener una guitarra, podrás seguir el curso con cualquier tipo de guitarra, eléctrica, acustica, español o criolla"
+      },
     "Escalas musicales": {
       "id": 3,
       "title": "Escalas musicales",
       "author": "María Rodríguez",
-      "price": 0,
-      "duration":1,
-      "language":"es",
+      "price": 4,
+      "duration": 1,
+      "language": "es",
       "subtitle": true,
       "area": "Music",
       "subarea": "Music Fundamentals",
       "level": "Beginners",
-      "date":"2023-01-25T22:13:45.531Z"
+      "date": "2023-01-25T22:13:45.531Z",
+      "image": "curso2.jpg"
     },
-    " Curso de Sound Design completo": {
+    "Curso de Sound Design completo": {
       "id": 4,
       "title": "Curso de Sound Design completo",
       "author": "María Rodríguez",
-      "price": 0,
-      "duration":1,
-      "language":"es",
+      "price": 3,
+      "duration": 1,
+      "language": "es",
       "subtitle": true,
       "area": "Sound Design",
       "level": "Advanced",
-      "date":"2023-01-25T22:13:45.531Z"
+      "date": "2023-01-25T22:13:45.531Z",
+      "image": "curso3.jpg"
     }
   }
 }

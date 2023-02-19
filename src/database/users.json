@@ -1,10 +1,14 @@
 {
-    "users": [
-      {
-        "id": "61dbae02-c147-4e28-863c-db7bd402b2d6",
-        "name": "UserPrueba",
-        "email": "prueba@prueba.com",
-        "password": "123456789"
-      }    
-    ]
-  }
+  "users": [
+    {
+      "id": "61dbae02-c147-4e28-863c-db7bd402b2d6",
+      "name": "UserPrueba",
+      "email": "prueba@prueba.com",
+      "password": "123456789",
+      "courses": [
+        2,
+        3
+      ]
+    }
+  ]
+}

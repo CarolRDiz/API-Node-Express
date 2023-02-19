@@ -1,7 +1,8 @@
 const express = require("express")
 const router = express.Router()
-const productosRouter = require("./productosRoutes")
-
+const productosRoutes = require("./productosRoutes")
+const imagesRoutes = require("./imagesRoutes.js")
+const usersRoutes = require("./usersRoutes")
 //RUTA DE ENTRADA HASTA ESTE MÓDULO: /api/v1
 
 router.route("/")
@@ -10,6 +11,8 @@ router.route("/")
         res.locals.mensaje = "OK"
         next()
     });
-router.use("/productos", productosRouter);
+router.use("/productos", productosRoutes);
+router.use("/images", imagesRoutes);
+router.use("/users", usersRoutes);
 
 module.exports.router = router

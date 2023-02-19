@@ -17,6 +17,10 @@ const getOneProduct = (nombre) => {
     const producto = productosModelo.getOneProduct(nombre)
     return producto
 }
+const getImageProduct = (nombre) => {
+    const image = productosModelo.getImageProduct(nombre)
+    return image
+}
 
 const createOneProduct = (newProduct) => {
     let today = new Date().toISOString()
@@ -41,6 +45,7 @@ const updateOneProduct = (producto) => {
 
 module.exports.getAllProducts = getAllProducts
 module.exports.getOneProduct = getOneProduct
+module.exports.getImageProduct = getImageProduct
 module.exports.createOneProduct = createOneProduct
 module.exports.deleteOneProduct = deleteOneProduct
 module.exports.updateOneProduct = updateOneProduct

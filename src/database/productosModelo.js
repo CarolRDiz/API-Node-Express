@@ -9,6 +9,11 @@ const getOneProduct = (title) => {
     const course = datos["productos"][title]
     return course
 }
+const getImageProduct = (title) => {
+  const course = datos["productos"][title]
+  const image = course.image
+  return image
+}
 const deleteOneProduct = (nombre) => {
   const producto = datos["productos"][nombre]
   //datos.remove(producto)
@@ -58,14 +63,14 @@ const createOneProduct2 = (newProduct) => {
 const createOneProduct = (newProduct) => {
 
     //Compruebo si el producto a insertar ya existe en la base de datos
-    if (datos["productos"][`${newProduct.nombre.replace(/\s+/g, "").toLowerCase()}`]){
+    if (datos["productos"][`${newProduct.title.replace(/\s+/g, "").toLowerCase()}`]){
         return false;
     }
     
     //Si el producto no existe, entonces se introduce en la BDD
-    let aux = newProduct.nombre
-    let nombre = aux.replace(/\s+/g, "").toLowerCase();
-    datos["productos"][nombre] = newProduct;
+    let title = newProduct.title
+    //let title = aux.replace(/\s+/g, "").toLowerCase();
+    datos["productos"][title] = newProduct;
 
     //Escribo el producto nuevo en el fichero JSON
     fs.writeFile(
@@ -111,3 +116,4 @@ module.exports.getOneProduct = getOneProduct
 module.exports.createOneProduct = createOneProduct
 module.exports.deleteOneProduct = deleteOneProduct
 module.exports.updateOneProduct = updateOneProduct
+module.exports.getImageProduct = getImageProduct
