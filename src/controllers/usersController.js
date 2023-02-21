@@ -6,7 +6,7 @@ const addCoursesToUser = (req, res, next) => {
     const user = usersService.getUserBySessionId(sessionId)
     user.courses = [...user.courses, ...courses]
     usersService.updateUser(user)
-    res.status(200).send("Cursos del usuario actualizados").end();
+    res.status(200).send(user.courses).end();
 };
 
 module.exports.addCoursesToUser = addCoursesToUser;
