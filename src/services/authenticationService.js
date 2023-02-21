@@ -41,7 +41,7 @@ const checkEmail = (email) => {
 }
 const createUser = (datos) => {
     const {name, email, password} = datos
-    const newUser = { id: uuid(),name, email, password, "courses":[]};
+    const newUser = { id: uuid(),name: name, email: email, password: password, courses:[]};
     authenticationModelo.createUser(newUser)
 }
 
