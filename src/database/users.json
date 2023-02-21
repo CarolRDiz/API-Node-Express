@@ -6,8 +6,6 @@
       "email": "prueba@prueba.com",
       "password": "123456789",
       "courses": [
-        2,
-        3
       ]
     }
   ]

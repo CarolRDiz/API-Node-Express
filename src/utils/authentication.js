@@ -17,13 +17,13 @@ const login = (req, res, next) => {
       res.status(401).send({ mensaje: "NO AUTORIZADO" }).end();
     }
     const sessionId = authenticationService.generateSessionId(idUserLogueado)
-    res.cookie("sessionId", sessionId, { httpOnly: true })
+    res.cookie("sessionId", sessionId, { httpOnly: false })
     const userData =  authenticationService.getUser(sessionId)
     res.status(200).send({message: "AUTORIZADO", user: userData}).end();
   }
   else if (sessionId) {
     if (authenticationService.checkCookieSession(sessionId)) {
-      res.cookie("sessionId", sessionId, { httpOnly: true })
+      res.cookie("sessionId", sessionId, { httpOnly: false })
       const userData =  authenticationService.getUser(sessionId)
       res.status(200).send({message:"AUTORIZADO", user: userData}).end()
     }
