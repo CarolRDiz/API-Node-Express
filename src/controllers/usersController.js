@@ -5,7 +5,7 @@ const addCoursesToUser = (req, res, next) => {
     const sessionId = req.cookies.sessionId;
     const user = usersService.getUserBySessionId(sessionId)
     //user.courses = user.courses.concat(courses)
-    usersService.updateUser(user)
+    //usersService.updateUser(user)
     res.status(200).send("update user").end();
 };
 
