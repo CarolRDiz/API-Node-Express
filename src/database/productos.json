@@ -1,7 +1,7 @@
 {
   "productos": {
     "Guitarra nivel intermedio": {
-      "id": 2,
+      "id": 1,
       "title": "Guitarra nivel intermedio",
       "author": "María Rodríguez",
       "price": 5,
@@ -19,7 +19,7 @@
       "requirements":"Únicamente debes tener una guitarra, podrás seguir el curso con cualquier tipo de guitarra, eléctrica, acustica, español o criolla"
       },
     "Escalas musicales": {
-      "id": 3,
+      "id": 2,
       "title": "Escalas musicales",
       "author": "María Rodríguez",
       "price": 4,
@@ -33,7 +33,7 @@
       "image": "curso2.jpg"
     },
     "Curso de  completo": {
-      "id": 4,
+      "id": 3,
       "title": "Curso de  completo",
       "author": "María Rodríguez",
       "price": 3,
