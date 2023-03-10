@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 
 var corsOptions = {
-  origin: ['http://localhost:5173','http://localhost:3001/api/v1/users/login','https://api-node.up.railway.app/api/v1/users/login', 'https://gleaming-capybara-1425de.netlify.app', 'https://funny-pegasus-acdd4e.netlify.app/'],
+  origin: ['http://localhost:5173','http://localhost:3001/api/v1/users/login','https://api-node.up.railway.app/api/v1/users/login', 'https://gleaming-capybara-1425de.netlify.app', 'https://funny-pegasus-acdd4e.netlify.app'],
   credentials: true,
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
